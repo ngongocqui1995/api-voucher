@@ -6,16 +6,18 @@
     "routes": [
        { "src": "/(.*)", "dest": "src/main.ts" }
     ],
-    "env": {
-        "APP_PORT": 3333,
-        "JWT_SECRET": "ngoqui1@",
-        "JWT_EXPIRES_IN": "1d",
-        "HOST_POSTGRES": "dpg-chovuendvk4goet4dko0-a.singapore-postgres.render.com",
-        "PORT_POSTGRES": 5432,
-        "USER_POSTGRES": "ngocqui",
-        "PASS_POSTGRES": "tpVCsuvcpKU0La7RItey3FjVUocstcXs",
-        "DB_POSTGRES": "web_voucher",
-        "SYNCHRONIZE_POSTGRES": true,
-        "DEFAULT_LANGUAGE": "vi"
+    "build": {
+        "env": {
+            "APP_PORT": 3333,
+            "JWT_SECRET": "ngoqui1@",
+            "JWT_EXPIRES_IN": "1d",
+            "HOST_POSTGRES": "dpg-chovuendvk4goet4dko0-a.singapore-postgres.render.com",
+            "PORT_POSTGRES": 5432,
+            "USER_POSTGRES": "ngocqui",
+            "PASS_POSTGRES": "tpVCsuvcpKU0La7RItey3FjVUocstcXs",
+            "DB_POSTGRES": "web_voucher",
+            "SYNCHRONIZE_POSTGRES": true,
+            "DEFAULT_LANGUAGE": "vi"
+        }
     }
  }
