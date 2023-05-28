@@ -89,6 +89,6 @@
     "testEnvironment": "node"
   },
   "_moduleAliases": {
-    "@src": "src"
+    "@src": "./src"
   }
 }
