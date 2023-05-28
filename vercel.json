@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "devCommand": "yarn start:prod",
     "routes": [
        { "src": "/(.*)", "dest": "dist/main.js" }
     ]
