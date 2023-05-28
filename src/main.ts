@@ -5,7 +5,11 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import { ValidationPipe } from '@nestjs/common';
 import * as bodyParser from 'body-parser';
 import * as path from 'path';
-import 'module-alias/register';
+import * as moduleAlias from 'module-alias';
+
+moduleAlias.addAliases({
+  '@src': path.resolve(__dirname, '..', 'src'),
+});
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {

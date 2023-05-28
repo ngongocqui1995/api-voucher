@@ -87,8 +87,5 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-  "_moduleAliases": {
-    "@src": "./src"
   }
 }
