@@ -8,8 +8,10 @@ import * as path from 'path';
 import * as moduleAlias from 'module-alias';
 
 moduleAlias.addAliases({
-  '@src': path.resolve(__dirname),
+  '@src': process.cwd() + '/src',
 });
+
+console.log(process.cwd() + '/src');
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
