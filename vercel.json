@@ -1,11 +1,4 @@
 {
     "version": 2,
-    "name": "api-voucher",
-    "buildCommand": "yarn build",
-    "builds": [
-       { "src": "dist/main", "use": "@vercel/node" }
-    ],
-    "routes": [
-       { "src": "/(.*)", "dest": "dist/main" }
-    ]
+    "name": "api-voucher"
  }
