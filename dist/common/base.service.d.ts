@@ -1,0 +1,31 @@
+import { Logger } from '@nestjs/common';
+import { I18nService } from 'nestjs-i18n';
+export declare class BaseService {
+    logger: Logger;
+    i18n: I18nService;
+    comparePassword: (newPassword: string, confirmPassword: string) => void;
+    checkCategoryExist: (check: boolean) => Promise<any>;
+    checkLinkExist: (check: boolean) => Promise<any>;
+    checkUrlExist: (check: boolean) => Promise<any>;
+    checkViewExist: (check: boolean) => Promise<any>;
+    checkLikeExist: (check: boolean) => Promise<any>;
+    checkEpisodesExist: (check: boolean) => Promise<any>;
+    checkCodeExist: (check: boolean) => Promise<any>;
+    checkHostExist: (check: boolean) => Promise<any>;
+    checkNameExist: (check: boolean) => Promise<any>;
+    checkRoleMenuExist: (check: boolean) => Promise<any>;
+    checkMenuNotExist: (check: boolean) => Promise<any>;
+    checkPermissionNotExist: (check: boolean) => Promise<any>;
+    checkRoleExist: (check: boolean) => Promise<any>;
+    checkCreatedByNotExist: (check: boolean) => Promise<any>;
+    checkCaptchaNotExist: (check: boolean) => Promise<any>;
+    checkRoleNotExist: (check: boolean) => Promise<any>;
+    checkPhoneExist: (check: boolean) => Promise<any>;
+    checkMenuExist: (check: boolean) => Promise<any>;
+    checkEmailExist: (check: boolean) => Promise<any>;
+    checkEmailNotExist: (check: boolean) => Promise<any>;
+    checkMovieNotExist: (check: boolean) => Promise<any>;
+    checkStatus: (status: any) => Promise<any>;
+    checkPasswordValid: (check: boolean) => void;
+    throwErrorSystem: (message: any) => never;
+}
