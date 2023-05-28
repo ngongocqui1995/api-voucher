@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ServeStaticModule } from '@nestjs/serve-static';
 import {
   AcceptLanguageResolver,
   CookieResolver,
@@ -42,10 +41,6 @@ import { PermissionModule } from './modules/permission/permission.module';
         AcceptLanguageResolver,
         new CookieResolver(['lang', 'locale', 'l']),
       ],
-    }),
-    ServeStaticModule.forRoot({
-      rootPath: path.join(__dirname, '..', 'public'),
-      serveRoot: '/public',
     }),
     AuthModule,
     UsersModule,
