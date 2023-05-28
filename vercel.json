@@ -1,6 +1,9 @@
 {
     "version": 2,
     "name": "api-voucher",
+    "installCommand": "yarn install",
+    "buildCommand": "yarn build",
+    "outputDirectory": ".",
     "builds": [
        { "src": "dist/main.js", "use": "@vercel/node" }
     ],
