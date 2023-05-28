@@ -1,8 +1,8 @@
 import { ApiProperty } from '@nestjsx/crud/lib/crud';
-import { BaseEntity } from 'src/common/entities/base.entity';
-import { Menu } from 'src/modules/menus/entities/menu.entity';
-import { Permission } from 'src/modules/permission/entities/permission.entity';
-import { Role } from 'src/modules/roles/entities/role.entity';
+import { BaseEntity } from '@src/common/entities/base.entity';
+import { Menu } from '@src/modules/menus/entities/menu.entity';
+import { Permission } from '@src/modules/permission/entities/permission.entity';
+import { Role } from '@src/modules/roles/entities/role.entity';
 import {
   Column,
   Entity,

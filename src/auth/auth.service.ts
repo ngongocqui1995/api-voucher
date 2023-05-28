@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
-import { BaseService } from 'src/common/base.service';
-import { User } from 'src/modules/users/entities/user.entity';
+import { BaseService } from '@src/common/base.service';
+import { User } from '@src/modules/users/entities/user.entity';
 import { JwtService } from '@nestjs/jwt';
 import { PasswordHasherService } from './password-hasher/password-hasher.service';
-import { LoginUserDto } from 'src/modules/users/dto/login-user.dto';
+import { LoginUserDto } from '@src/modules/users/dto/login-user.dto';
 import { I18nLang } from 'nestjs-i18n';
-import { LoginRsp } from 'src/modules/users/interfaces/user';
+import { LoginRsp } from '@src/modules/users/interfaces/user';
 
 @Injectable()
 export class AuthService extends TypeOrmCrudService<User> {

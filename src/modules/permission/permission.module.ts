@@ -4,8 +4,8 @@ import { PermissionController } from './permission.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { Permission } from './entities/permission.entity';
-import { BaseService } from 'src/common/base.service';
-import { BaseController } from 'src/common/base.controller';
+import { BaseService } from '@src/common/base.service';
+import { BaseController } from '@src/common/base.controller';
 import { RoleToMenuModule } from '../role-to-menu/role-to-menu.module';
 
 @Module({

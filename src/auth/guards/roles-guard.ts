@@ -1,16 +1,19 @@
-import { Injectable, CanActivate, ExecutionContext, Logger } from '@nestjs/common';
+import {
+  Injectable,
+  CanActivate,
+  ExecutionContext,
+  Logger,
+} from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { ENUM_STATUS } from 'src/common';
-import { ROLES } from 'src/modules/roles/contants/contants';
-import { User } from 'src/modules/users/entities/user.entity';
+import { ENUM_STATUS } from '@src/common';
+import { ROLES } from '@src/modules/roles/contants/contants';
+import { User } from '@src/modules/users/entities/user.entity';
 
 @Injectable()
 export class RolesGuard implements CanActivate {
   logger: Logger = new Logger('role_guard');
 
-  constructor(
-    private reflector: Reflector,
-  ) {}
+  constructor(private reflector: Reflector) {}
 
   /**
    * Check can activate.
@@ -28,7 +31,7 @@ export class RolesGuard implements CanActivate {
     return await this.isMatchRoles(roles, user);
   }
 
-  async isMatchRoles(roles: string[], user: User) {    
+  async isMatchRoles(roles: string[], user: User) {
     if (user.role.code === ROLES.ROLE_ROOT) return true;
     if (roles.includes(user?.role?.code)) return true;
 

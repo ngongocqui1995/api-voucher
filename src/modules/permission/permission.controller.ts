@@ -21,15 +21,15 @@ import {
   ParsedBody,
   ParsedRequest,
 } from '@nestjsx/crud';
-import { BaseController } from 'src/common/base.controller';
+import { BaseController } from '@src/common/base.controller';
 import { I18nLang } from 'nestjs-i18n';
 import { RoleToMenuService } from '../role-to-menu/role-to-menu.service';
-import { ENUM_STATUS } from 'src/common';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { RolesGuard } from 'src/auth/guards/roles-guard';
+import { ENUM_STATUS } from '@src/common';
+import { JwtAuthGuard } from '@src/auth/guards/jwt-auth.guard';
+import { RolesGuard } from '@src/auth/guards/roles-guard';
 import { ROLES } from '../roles/contants/contants';
-import { RequireRoles } from 'src/auth/decorator/roles.decorator';
-import { UpdateStatusDTO } from 'src/common/dto/update-status.dto';
+import { RequireRoles } from '@src/auth/decorator/roles.decorator';
+import { UpdateStatusDTO } from '@src/common/dto/update-status.dto';
 
 @ApiTags('Permissions')
 @Crud({
