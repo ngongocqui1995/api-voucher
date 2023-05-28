@@ -27,6 +27,7 @@ async function bootstrap() {
     await app.listen(process.env.PORT || process.env.APP_PORT);
     console.log(`Application is Environment: ${process.env.ENVIRONMENT}`);
     console.log(`Application is running on: ${await app.getUrl()}`);
+    return app;
 }
-bootstrap();
+exports.default = bootstrap();
 //# sourceMappingURL=main.js.map
