@@ -5,13 +5,7 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import { ValidationPipe } from '@nestjs/common';
 import * as bodyParser from 'body-parser';
 import * as path from 'path';
-import * as moduleAlias from 'module-alias';
-
-moduleAlias.addAliases({
-  '@src': process.cwd() + '/src',
-});
-
-console.log(process.cwd() + '/src');
+import 'module-alias/register';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
@@ -33,7 +27,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
 
-  await app.listen(process.env.PORT || process.env.APP_PORT);
+  await app.listen(process.env.PORT || process.env.APP_PORT || 3000);
   console.log(`Application is Environment: ${process.env.ENVIRONMENT}`);
   console.log(`Application is running on: ${await app.getUrl()}`);
 }
