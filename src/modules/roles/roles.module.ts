@@ -5,8 +5,8 @@ import { RolesService } from './roles.service';
 import { RolesController } from './roles.controller';
 import { BaseService } from '../../common/base.service';
 import { ConfigModule } from '@nestjs/config';
-import { PasswordHasherService } from '@src/auth/password-hasher/password-hasher.service';
-import { BaseController } from '@src/common/base.controller';
+import { PasswordHasherService } from 'src/auth/password-hasher/password-hasher.service';
+import { BaseController } from 'src/common/base.controller';
 import { UsersModule } from '../users/users.module';
 
 @Module({

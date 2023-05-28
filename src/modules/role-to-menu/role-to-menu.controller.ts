@@ -13,10 +13,10 @@ import {
 } from '@nestjsx/crud';
 import { RoleToMenu } from './entities/role-to-menu.entity';
 import { I18nLang } from 'nestjs-i18n';
-import { JwtAuthGuard } from '@src/auth/guards/jwt-auth.guard';
-import { RolesGuard } from '@src/auth/guards/roles-guard';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { RolesGuard } from 'src/auth/guards/roles-guard';
 import { ROLES } from '../roles/contants/contants';
-import { RequireRoles } from '@src/auth/decorator/roles.decorator';
+import { RequireRoles } from 'src/auth/decorator/roles.decorator';
 
 @ApiTags('Role-To-Menu')
 @Crud({

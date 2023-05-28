@@ -8,11 +8,11 @@ import {
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { ApiHeader, ApiTags } from '@nestjs/swagger';
-import { LoginUserDto } from '@src/modules/users/dto/login-user.dto';
+import { LoginUserDto } from 'src/modules/users/dto/login-user.dto';
 import { I18nLang } from 'nestjs-i18n';
-import { LoginRsp } from '@src/modules/users/interfaces/user';
+import { LoginRsp } from 'src/modules/users/interfaces/user';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
-import { ENUM_MODEL } from '@src/common';
+import { ENUM_MODEL } from 'src/common';
 
 @ApiTags('Auth')
 @Controller('auth')

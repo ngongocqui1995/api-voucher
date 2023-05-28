@@ -3,7 +3,13 @@
     "installCommand": "yarn install",
     "buildCommand": "yarn build",
     "outputDirectory": "dist",
-    "devCommand": "yarn start:prod",
+    "builds": [
+        {
+            "src": "dist/main.js",
+            "use": "@vercel/node",
+            "config": { "includeFiles": ["dist/**"] }
+        }
+    ],
     "routes": [
        { "src": "/(.*)", "dest": "dist/main.js" }
     ]

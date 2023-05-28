@@ -22,12 +22,12 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { PasswordHasherService } from '../../auth/password-hasher/password-hasher.service';
 import { Connection, Not } from 'typeorm';
 import { I18nLang } from 'nestjs-i18n';
-import { ENUM_MODEL } from '@src/common';
+import { ENUM_MODEL } from 'src/common';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { RolesService } from '../roles/roles.service';
 import { ChangePasswordDTO } from './dto/change-password.dto';
 import { CreateCustomerDto } from './dto/create-cutomer.dto';
-import { UpdateStatusDTO } from '@src/common/dto/update-status.dto';
+import { UpdateStatusDTO } from 'src/common/dto/update-status.dto';
 import { ChangePasswordCustomerDTO } from './dto/change-password-customer.dto';
 import { ROLES } from '../roles/contants/contants';
 

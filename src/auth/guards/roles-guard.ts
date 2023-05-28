@@ -5,9 +5,9 @@ import {
   Logger,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { ENUM_STATUS } from '@src/common';
-import { ROLES } from '@src/modules/roles/contants/contants';
-import { User } from '@src/modules/users/entities/user.entity';
+import { ENUM_STATUS } from 'src/common';
+import { ROLES } from 'src/modules/roles/contants/contants';
+import { User } from 'src/modules/users/entities/user.entity';
 
 @Injectable()
 export class RolesGuard implements CanActivate {

@@ -7,8 +7,8 @@ import {
 } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
 import { BaseEntity } from '../../../common/entities/base.entity';
-import { User } from '@src/modules/users/entities/user.entity';
-import { RoleToMenu } from '@src/modules/role-to-menu/entities/role-to-menu.entity';
+import { User } from 'src/modules/users/entities/user.entity';
+import { RoleToMenu } from 'src/modules/role-to-menu/entities/role-to-menu.entity';
 
 @Entity('roles')
 export class Role extends BaseEntity {

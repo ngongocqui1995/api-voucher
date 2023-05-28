@@ -9,9 +9,9 @@ import {
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import to from 'await-to-js';
 import { I18nLang } from 'nestjs-i18n';
-import { ENUM_MODEL } from '@src/common';
-import { BaseService } from '@src/common/base.service';
-import { UpdateStatusDTO } from '@src/common/dto/update-status.dto';
+import { ENUM_MODEL } from 'src/common';
+import { BaseService } from 'src/common/base.service';
+import { UpdateStatusDTO } from 'src/common/dto/update-status.dto';
 import { Connection, Not } from 'typeorm';
 import { CreateMenuDto } from './dto/create-menu.dto';
 import { Menu } from './entities/menu.entity';

@@ -4,14 +4,14 @@ import { AuthController } from './auth.controller';
 import { ConfigModule } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from '@src/modules/users/entities/user.entity';
-import { Role } from '@src/modules/roles/entities/role.entity';
-import { RolesService } from '@src/modules/roles/roles.service';
+import { User } from 'src/modules/users/entities/user.entity';
+import { Role } from 'src/modules/roles/entities/role.entity';
+import { RolesService } from 'src/modules/roles/roles.service';
 import { JwtStrategyService } from './jwt-strategy/jwt-strategy.service';
 import { PasswordHasherService } from './password-hasher/password-hasher.service';
-import { BaseController } from '@src/common/base.controller';
-import { BaseService } from '@src/common/base.service';
-import { UsersService } from '@src/modules/users/users.service';
+import { BaseController } from 'src/common/base.controller';
+import { BaseService } from 'src/common/base.service';
+import { UsersService } from 'src/modules/users/users.service';
 
 @Module({
   imports: [

@@ -23,16 +23,16 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { BaseController } from '../../common/base.controller';
 import { I18nLang } from 'nestjs-i18n';
-import { ENUM_MODEL } from '@src/common';
-import { RequireRoles } from '@src/auth/decorator/roles.decorator';
+import { ENUM_MODEL } from 'src/common';
+import { RequireRoles } from 'src/auth/decorator/roles.decorator';
 import { ROLES } from '../roles/contants/contants';
-import { JwtAuthGuard } from '@src/auth/guards/jwt-auth.guard';
-import { RolesGuard } from '@src/auth/guards/roles-guard';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { RolesGuard } from 'src/auth/guards/roles-guard';
 import { ChangePasswordDTO } from './dto/change-password.dto';
 import { CreateCustomerDto } from './dto/create-cutomer.dto';
 import { request } from 'http';
 import { ChangePasswordCustomerDTO } from './dto/change-password-customer.dto';
-import { UpdateStatusDTO } from '@src/common/dto/update-status.dto';
+import { UpdateStatusDTO } from 'src/common/dto/update-status.dto';
 
 @Crud({
   model: {
