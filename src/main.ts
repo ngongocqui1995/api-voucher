@@ -17,7 +17,7 @@ async function bootstrap() {
   app.setViewEngine('hbs');
   app.enableCors({
     origin: ['http://localhost:8000'],
-    allowedHeaders: ['Content-Type', 'x-custom-lang'],
+    allowedHeaders: ['Content-Type', 'x-custom-lang', 'authorization'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'UPDATE', 'OPTIONS'],
     credentials: true,
   });
