@@ -15,7 +15,18 @@ async function bootstrap() {
   app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
   app.setBaseViewsDir(path.join(__dirname, '..', 'views'));
   app.setViewEngine('hbs');
-  app.enableCors();
+  app.enableCors({
+    origin: ['http://localhost:8000'],
+    allowedHeaders: [
+      'X-Requested-With',
+      'X-HTTP-Method-Override',
+      'Content-Type',
+      'Accept',
+      'Observe',
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'UPDATE', 'OPTIONS'],
+    credentials: true,
+  });
 
   const options = new DocumentBuilder()
     .setTitle('Movie API')
