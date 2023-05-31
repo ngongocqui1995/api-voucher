@@ -93,14 +93,6 @@ export class CreateCustomerDto {
   })
   gender: string;
 
-  @IsString({ message: 'errors.CAPTCHA_STRING' })
-  @IsNotEmpty({ message: 'errors.CAPTCHA_NOT_EMPTY' })
-  @ApiProperty({
-    type: String,
-    required: true,
-  })
-  captcha: string;
-
   @IsOptional()
   @IsString({ message: 'errors.STATUS_STRING' })
   @IsNotEmpty({ message: 'errors.STATUS_NOT_EMPTY' })
