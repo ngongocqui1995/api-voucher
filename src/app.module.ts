@@ -20,6 +20,7 @@ import { RolesModule } from './modules/roles/roles.module';
 import { RoleToMenuModule } from './modules/role-to-menu/role-to-menu.module';
 import { MenusModule } from './modules/menus/menus.module';
 import { PermissionModule } from './modules/permission/permission.module';
+import { StoresModule } from './modules/stores/stores.module';
 
 @Module({
   imports: [
@@ -48,6 +49,7 @@ import { PermissionModule } from './modules/permission/permission.module';
     RoleToMenuModule,
     MenusModule,
     PermissionModule,
+    StoresModule,
   ],
   controllers: [AppController],
   providers: [

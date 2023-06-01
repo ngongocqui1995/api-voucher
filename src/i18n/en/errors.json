@@ -60,6 +60,7 @@
   "DETAIL_NOT_EMPTY": "Description cannot be empty!",
   "DESCRIPTION_STRING": "Description must be string!",
   "DESCRIPTION_NOT_EMPTY": "Description cannot be empty!",
+  "DESCRIPTION_LENGTH_5_100": "Description must have length >= 5 and <= 100!",
   "CATEGORY_ARRAY": "Category must be array!",
   "CATEGORY_ALREADY_EXISTS": "Category exist!",
   "CATEGORY_STRING": "Category must be string!",
