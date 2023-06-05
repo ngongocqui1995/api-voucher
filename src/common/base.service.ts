@@ -135,14 +135,6 @@ export class BaseService {
     );
   };
 
-  checkCaptchaNotExist = (check: boolean): Promise<any> => {
-    if (check) return;
-    throw new HttpException(
-      { key: 'errors.CAPTCHA_NOT_EXISTS' },
-      HttpStatus.BAD_REQUEST,
-    );
-  };
-
   checkRoleNotExist = (check: boolean): Promise<any> => {
     if (check) return;
     throw new HttpException(

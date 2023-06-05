@@ -5,11 +5,11 @@ import {
   UseGuards,
   Put,
   ValidationPipe,
+  Request,
 } from '@nestjs/common';
-import { StoresService } from './stores.service';
-import { CreateStoreDto } from './dto/create-store.dto';
-import { UpdateStoreDto } from './dto/update-store.dto';
-import { ApiHeader, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { CampaignsService } from './campaigns.service';
+import { CreateCampaignDto } from './dto/create-campaign.dto';
+import { UpdateCampaignDto } from './dto/update-campaign.dto';
 import {
   Crud,
   CrudController,
@@ -18,9 +18,10 @@ import {
   ParsedBody,
   ParsedRequest,
 } from '@nestjsx/crud';
-import { Store } from './entities/store.entity';
+import { Campaign } from './entities/campaign.entity';
 import { ENUM_MODEL } from 'src/common';
 import { BaseController } from 'src/common/base.controller';
+import { ApiHeader, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { RolesGuard } from 'src/auth/guards/roles-guard';
 import { RequireRoles } from 'src/auth/decorator/roles.decorator';
@@ -28,14 +29,14 @@ import { ROLES } from '../roles/contants/contants';
 import { I18nLang } from 'nestjs-i18n';
 import { UpdateStatusDTO } from 'src/common/dto/update-status.dto';
 
-@ApiTags('Stores')
+@ApiTags('Campaigns')
 @Crud({
   model: {
-    type: Store,
+    type: Campaign,
   },
   dto: {
-    create: CreateStoreDto,
-    update: UpdateStoreDto,
+    create: CreateCampaignDto,
+    update: UpdateCampaignDto,
   },
   routes: {
     exclude: ['deleteOneBase', 'createManyBase'],
@@ -48,16 +49,16 @@ import { UpdateStatusDTO } from 'src/common/dto/update-status.dto';
     },
   },
 })
-@Controller('stores')
-export class StoresController implements CrudController<Store> {
-  model_name: string = ENUM_MODEL.STORE;
+@Controller('campaigns')
+export class CampaignsController implements CrudController<Campaign> {
+  model_name: string = ENUM_MODEL.CAMPAIGN;
 
   constructor(
-    public service: StoresService,
+    public service: CampaignsService,
     private checkController: BaseController,
   ) {}
 
-  get base(): CrudController<Store> {
+  get base(): CrudController<Campaign> {
     return this;
   }
 
@@ -66,8 +67,8 @@ export class StoresController implements CrudController<Store> {
     description: 'Bearer {{token}}',
   })
   @Override()
-  getMany(@ParsedRequest() req: CrudRequest) {
-    return this.base.getManyBase(req);
+  getMany(@ParsedRequest() req: CrudRequest, @Request() request) {
+    return this.service.getManyBase(req, request);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
@@ -91,10 +92,11 @@ export class StoresController implements CrudController<Store> {
   coolFunction(
     @Param('id') id: string,
     @ParsedRequest() req: CrudRequest,
-    @ParsedBody() dto: CreateStoreDto,
+    @Request() request,
+    @ParsedBody() dto: CreateCampaignDto,
     @I18nLang() lang: string,
   ) {
-    return this.service.updateOneBase(id, req, dto, lang);
+    return this.service.updateOneBase(id, req, request, dto, lang);
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
@@ -107,7 +109,7 @@ export class StoresController implements CrudController<Store> {
   awesomePUT(
     @Param('id') id: string,
     @ParsedRequest() req: CrudRequest,
-    @ParsedBody() dto: CreateStoreDto,
+    @ParsedBody() dto: CreateCampaignDto,
     @I18nLang() lang: string,
   ) {
     return this.service.replaceOneBase(id, req, dto, lang);
@@ -122,10 +124,11 @@ export class StoresController implements CrudController<Store> {
   @Override()
   createOne(
     @ParsedRequest() req: CrudRequest,
-    @ParsedBody() dto: CreateStoreDto,
+    @Request() request,
+    @ParsedBody() dto: CreateCampaignDto,
     @I18nLang() lang: string,
   ) {
-    return this.service.createOneBase(req, dto, lang);
+    return this.service.createOneBase(req, request, dto, lang);
   }
 
   @Put('status/:id')

@@ -5,11 +5,13 @@ import {
   PrimaryGeneratedColumn,
   ManyToOne,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
 import { BaseEntity } from '../../../common/entities/base.entity';
 import { Role } from 'src/modules/roles/entities/role.entity';
+import { Campaign } from 'src/modules/campaigns/entities/campaign.entity';
 
 @Entity('users')
 export class User extends BaseEntity {
@@ -127,4 +129,7 @@ export class User extends BaseEntity {
     enum: ['ACTIVE', 'INACTIVE'],
   })
   status: string;
+
+  @OneToMany(() => Campaign, (campaign) => campaign.created_by)
+  campaigns: Campaign[];
 }

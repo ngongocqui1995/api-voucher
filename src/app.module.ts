@@ -21,6 +21,8 @@ import { RoleToMenuModule } from './modules/role-to-menu/role-to-menu.module';
 import { MenusModule } from './modules/menus/menus.module';
 import { PermissionModule } from './modules/permission/permission.module';
 import { StoresModule } from './modules/stores/stores.module';
+import { UploadsModule } from './modules/uploads/uploads.module';
+import { CampaignsModule } from './modules/campaigns/campaigns.module';
 
 @Module({
   imports: [
@@ -50,6 +52,8 @@ import { StoresModule } from './modules/stores/stores.module';
     MenusModule,
     PermissionModule,
     StoresModule,
+    UploadsModule,
+    CampaignsModule,
   ],
   controllers: [AppController],
   providers: [

@@ -17,6 +17,7 @@ export enum ENUM_MODEL {
   PERMISSION = 'PERMISSION',
   STATUS = 'STATUS',
   STORE = 'STORE',
+  CAMPAIGN = 'CAMPAIGN',
 }
 
 export const ENUM_DIMENSIONS = {

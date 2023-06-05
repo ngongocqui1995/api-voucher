@@ -80,6 +80,7 @@
   "DETAIL_NOT_EMPTY": "Chi tiết không được rỗng!",
   "DESCRIPTION_STRING": "Mô tả phải là chuỗi!",
   "DESCRIPTION_NOT_EMPTY": "Mô tả không được rỗng!",
+  "DESCRIPTION_LENGTH_5_100": "Mô tả phải có độ dài >= 5 and <= 100!",
   "CATEGORY_ARRAY": "Thể loại phải là mảng!",
   "CATEGORY_ALREADY_EXISTS": "Thể loại này đã tồn tại!",
   "CATEGORY_STRING": "Thể loại phải là chuỗi!",
