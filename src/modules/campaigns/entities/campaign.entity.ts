@@ -40,6 +40,13 @@ export class Campaign extends BaseEntity {
   name: string;
 
   @ApiProperty({
+    type: String,
+    required: true,
+  })
+  @Column({ type: 'varchar', nullable: true })
+  content: string;
+
+  @ApiProperty({
     type: Number,
     required: false,
     description: 'quantity',
@@ -74,14 +81,14 @@ export class Campaign extends BaseEntity {
     type: Date,
     description: 'startDate',
   })
-  @Column({ type: 'date', nullable: true })
+  @Column({ type: 'timestamp', nullable: true })
   startDate: Date;
 
   @ApiProperty({
     type: Date,
     description: 'endDate',
   })
-  @Column({ type: 'date', nullable: true })
+  @Column({ type: 'timestamp', nullable: true })
   endDate: Date;
 
   @ApiProperty({

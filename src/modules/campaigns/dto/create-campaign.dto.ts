@@ -60,12 +60,21 @@ export class CreateCampaignDto {
   })
   status: string;
 
+  @IsOptional()
+  @ApiProperty({
+    type: String,
+    required: true,
+  })
+  content: string;
+
+  @IsOptional()
   @ApiProperty({
     type: Date,
     required: true,
   })
   startDate: Date;
 
+  @IsOptional()
   @ApiProperty({
     type: Date,
     required: true,

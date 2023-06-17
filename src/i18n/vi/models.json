@@ -1,8 +1,9 @@
 {
-    "USER": "Người dùng",
-    "ROLE": "Vai trò",
-    "STATUS": "Trạng thái",
-    "PERMISSION": "Permission",
-    "MENU": "Menu",
-    "STORE": "Cửa hàng"
+  "USER": "Người dùng",
+  "ROLE": "Vai trò",
+  "STATUS": "Trạng thái",
+  "PERMISSION": "Permission",
+  "MENU": "Menu",
+  "STORE": "Cửa hàng",
+  "CAMPAIGN": "Chiến dịch"
 }

@@ -1,8 +1,9 @@
 {
-    "USER": "User",
-    "ROLE": "Role",
-    "MENU": "Menu",
-    "PERMISSION": "Permission",
-    "STATUS": "Status",
-    "STORE": "Store"
+  "USER": "User",
+  "ROLE": "Role",
+  "MENU": "Menu",
+  "PERMISSION": "Permission",
+  "STATUS": "Status",
+  "STORE": "Store",
+  "CAMPAIGN": "Campaign"
 }

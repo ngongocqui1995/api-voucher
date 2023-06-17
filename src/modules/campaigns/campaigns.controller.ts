@@ -71,8 +71,7 @@ export class CampaignsController implements CrudController<Campaign> {
     return this.service.getManyBase(req, request);
   }
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @RequireRoles(ROLES.ROLE_ROOT)
+  @UseGuards(JwtAuthGuard)
   @ApiHeader({
     name: 'Authorization',
     description: 'Bearer {{token}}',
@@ -82,8 +81,7 @@ export class CampaignsController implements CrudController<Campaign> {
     return this.base.getOneBase(req);
   }
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @RequireRoles(ROLES.ROLE_ROOT)
+  @UseGuards(JwtAuthGuard)
   @ApiHeader({
     name: 'Authorization',
     description: 'Bearer {{token}}',
@@ -99,8 +97,7 @@ export class CampaignsController implements CrudController<Campaign> {
     return this.service.updateOneBase(id, req, request, dto, lang);
   }
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @RequireRoles(ROLES.ROLE_ROOT)
+  @UseGuards(JwtAuthGuard)
   @ApiHeader({
     name: 'Authorization',
     description: 'Bearer {{token}}',
@@ -115,8 +112,7 @@ export class CampaignsController implements CrudController<Campaign> {
     return this.service.replaceOneBase(id, req, dto, lang);
   }
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @RequireRoles(ROLES.ROLE_ROOT)
+  @UseGuards(JwtAuthGuard)
   @ApiHeader({
     name: 'Authorization',
     description: 'Bearer {{token}}',
@@ -132,8 +128,7 @@ export class CampaignsController implements CrudController<Campaign> {
   }
 
   @Put('status/:id')
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @RequireRoles(ROLES.ROLE_ROOT)
+  @UseGuards(JwtAuthGuard)
   @ApiHeader({
     name: 'Authorization',
     description: 'Bearer {{token}}',
