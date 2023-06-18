@@ -2,14 +2,15 @@ import {
   Controller,
   Body,
   Param,
-  UseGuards,
-  Put,
-  ValidationPipe,
   Request,
+  UseGuards,
+  ValidationPipe,
+  Put,
 } from '@nestjs/common';
-import { CampaignsService } from './campaigns.service';
-import { CreateCampaignDto } from './dto/create-campaign.dto';
-import { UpdateCampaignDto } from './dto/update-campaign.dto';
+import { VouchersService } from './vouchers.service';
+import { ENUM_MODEL } from 'src/common';
+import { BaseController } from 'src/common/base.controller';
+import { Voucher } from './entities/voucher.entity';
 import {
   Crud,
   CrudController,
@@ -18,22 +19,21 @@ import {
   ParsedBody,
   ParsedRequest,
 } from '@nestjsx/crud';
-import { Campaign } from './entities/campaign.entity';
-import { ENUM_MODEL } from 'src/common';
-import { BaseController } from 'src/common/base.controller';
 import { ApiHeader, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { CreateVoucherDto } from './dto/create-voucher.dto';
+import { UpdateVoucherDto } from './dto/update-voucher.dto';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { I18nLang } from 'nestjs-i18n';
 import { UpdateStatusDTO } from 'src/common/dto/update-status.dto';
 
-@ApiTags('Campaigns')
+@ApiTags('Vouchers')
 @Crud({
   model: {
-    type: Campaign,
+    type: Voucher,
   },
   dto: {
-    create: CreateCampaignDto,
-    update: UpdateCampaignDto,
+    create: CreateVoucherDto,
+    update: UpdateVoucherDto,
   },
   routes: {
     exclude: ['deleteOneBase', 'createManyBase'],
@@ -54,16 +54,16 @@ import { UpdateStatusDTO } from 'src/common/dto/update-status.dto';
     },
   },
 })
-@Controller('campaigns')
-export class CampaignsController implements CrudController<Campaign> {
-  model_name: string = ENUM_MODEL.CAMPAIGN;
+@Controller('vouchers')
+export class VouchersController implements CrudController<Voucher> {
+  model_name: string = ENUM_MODEL.VOUCHER;
 
   constructor(
-    public service: CampaignsService,
+    public service: VouchersService,
     private checkController: BaseController,
   ) {}
 
-  get base(): CrudController<Campaign> {
+  get base(): CrudController<Voucher> {
     return this;
   }
 
@@ -96,7 +96,7 @@ export class CampaignsController implements CrudController<Campaign> {
     @Param('id') id: string,
     @ParsedRequest() req: CrudRequest,
     @Request() request,
-    @ParsedBody() dto: CreateCampaignDto,
+    @ParsedBody() dto: CreateVoucherDto,
     @I18nLang() lang: string,
   ) {
     return this.service.updateOneBase(id, req, request, dto, lang);
@@ -111,7 +111,7 @@ export class CampaignsController implements CrudController<Campaign> {
   awesomePUT(
     @Param('id') id: string,
     @ParsedRequest() req: CrudRequest,
-    @ParsedBody() dto: CreateCampaignDto,
+    @ParsedBody() dto: CreateVoucherDto,
     @I18nLang() lang: string,
   ) {
     return this.service.replaceOneBase(id, req, dto, lang);
@@ -126,7 +126,7 @@ export class CampaignsController implements CrudController<Campaign> {
   createOne(
     @ParsedRequest() req: CrudRequest,
     @Request() request,
-    @ParsedBody() dto: CreateCampaignDto,
+    @ParsedBody() dto: CreateVoucherDto,
     @I18nLang() lang: string,
   ) {
     return this.service.createOneBase(req, request, dto, lang);

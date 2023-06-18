@@ -12,6 +12,7 @@ import { Exclude } from 'class-transformer';
 import { BaseEntity } from '../../../common/entities/base.entity';
 import { Role } from 'src/modules/roles/entities/role.entity';
 import { Campaign } from 'src/modules/campaigns/entities/campaign.entity';
+import { Voucher } from 'src/modules/vouchers/entities/voucher.entity';
 
 @Entity('users')
 export class User extends BaseEntity {
@@ -132,4 +133,7 @@ export class User extends BaseEntity {
 
   @OneToMany(() => Campaign, (campaign) => campaign.created_by)
   campaigns: Campaign[];
+
+  @OneToMany(() => Voucher, (voucher) => voucher.created_by)
+  vouchers: Voucher[];
 }

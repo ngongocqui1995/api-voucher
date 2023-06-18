@@ -76,7 +76,7 @@ export class UsersController implements CrudController<User> {
   }
 
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @RequireRoles(ROLES.ROLE_ADMIN)
+  @RequireRoles(ROLES.ROLE_ADMIN, ROLES.ROLE_COUNTERPART)
   @Override()
   getMany(@ParsedRequest() req, @Request() request) {
     return this.service.getManyBase(req, request);

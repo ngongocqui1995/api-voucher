@@ -23,6 +23,7 @@ import { PermissionModule } from './modules/permission/permission.module';
 import { StoresModule } from './modules/stores/stores.module';
 import { UploadsModule } from './modules/uploads/uploads.module';
 import { CampaignsModule } from './modules/campaigns/campaigns.module';
+import { VouchersModule } from './modules/vouchers/vouchers.module';
 
 @Module({
   imports: [
@@ -54,6 +55,7 @@ import { CampaignsModule } from './modules/campaigns/campaigns.module';
     StoresModule,
     UploadsModule,
     CampaignsModule,
+    VouchersModule,
   ],
   controllers: [AppController],
   providers: [

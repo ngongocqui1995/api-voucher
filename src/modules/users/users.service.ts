@@ -61,8 +61,8 @@ export class UsersService extends TypeOrmCrudService<User> {
         builder.andWhere(`"role"."code" != :code`, { code: ROLES.ROLE_ROOT });
         break;
       }
-      case ROLES.ROLE_UP_MOVIE: {
-        builder.andWhere(`"role"."code" not in(..:code)`, {
+      case ROLES.ROLE_COUNTERPART: {
+        builder.andWhere(`"role"."code" not in(:...code)`, {
           code: [ROLES.ROLE_ROOT, ROLES.ROLE_ADMIN],
         });
         break;
