@@ -22,6 +22,14 @@ export class Campaign extends BaseEntity {
 
   @ApiProperty({
     type: String,
+    description: 'Avatar',
+    example: 'avatar',
+  })
+  @Column({ type: 'varchar', nullable: true })
+  avatar: string;
+
+  @ApiProperty({
+    type: String,
     required: true,
     description: 'admin',
     example: 'admin',

@@ -22,6 +22,17 @@ export class CreateCampaignDto {
   })
   code: string;
 
+  @IsOptional()
+  @IsString({ message: 'errors.AVATAR_STRING' })
+  @IsNotEmpty({ message: 'errors.AVATAR_NOT_EMPTY' })
+  @ApiProperty({
+    type: String,
+    description: 'Avatar',
+    example: 'avatar',
+    required: false,
+  })
+  avatar: string;
+
   @IsString({ message: 'errors.NAME_STRING' })
   @IsNotEmpty({ message: 'errors.NAME_NOT_EMPTY' })
   @Length(3, 50, { message: 'errors.NAME_LENGTH_3_50' })
