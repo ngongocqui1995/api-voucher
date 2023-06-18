@@ -16,7 +16,10 @@ async function bootstrap() {
   app.setBaseViewsDir(path.join(__dirname, '..', 'views'));
   app.setViewEngine('hbs');
   app.enableCors({
-    origin: ['http://localhost:8000'],
+    origin: [
+      'http://localhost:8000',
+      'https://portalvoucher-ngongocqui.cloud.okteto.net',
+    ],
     allowedHeaders: ['Content-Type', 'x-custom-lang', 'authorization'],
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'UPDATE', 'OPTIONS'],
     credentials: true,
